@@ -20,6 +20,8 @@ class CustomClassIterable implements Iterable<Integer>{
 public class CustomClassIterableDemo{
 	public static void main(String[] args){
 		CustomClassIterable custObj = new CustomClassIterable(); 
+		//iterating over a list of integers since we have declared the returned iterator from custom  class
+		//to be capable of iterating through a list of integers.
 		for(Integer listElem : custObj){
 			System.out.println(listElem);
 		}
