@@ -10,9 +10,30 @@ class CustomClassIterable implements Iterable<Integer>{
 		intList.add(45);		
 	}
 	
+	/**
 	public Iterator<Integer> iterator(){
 		//retuning an iterator on the list that is created when a new CustomClassIterable object is instantiated
 		return intList.iterator();
+	}
+	**/
+	
+	public Iterator<Integer> iterator(){
+		return new CustomIntegerIterator();
+	}
+	
+	private class CustomIntegerIterator implements Iterator<Integer>{
+		private int index=0;
+		public boolean hasNext(){
+			return index<5;
+		}
+		public Integer next(){
+			int i = intList.get(index);
+			index++;
+			return i;
+		}
+		public void remove(){
+			intList.remove(index);
+		}
 	}
 }
 
